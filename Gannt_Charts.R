@@ -8,7 +8,8 @@
 raw <- read.xlsx("gantt_chart_data.xlsx", startRow = 4,detectDates = TRUE) 
 
 
-processed_data <- raw %>% data.frame(.) %>%  
+processed_data <- raw %>% 
+  data.frame(.) %>%  
   select(Project,Summary,Priority,Planned.Start,Planned.End,Assignee) %>%
   na.omit()%>%
   mutate(start = ymd_hms(as.POSIXct(Planned.Start* (60*60*24), origin="1899-12-30", tz="GMT"))) %>%

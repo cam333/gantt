@@ -2,3 +2,16 @@
 .Rhistory
 .RData
 .Ruserdata
+
+.Rproj.user
+*.Rproj
+.Rhistory
+.RData
+.Ruserdata
+data/
+models/
+packrat/lib*/
+daily/data/
+_ignore/
+reports/trelloscope/
+packrat/src/
