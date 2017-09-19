@@ -38,9 +38,9 @@ weekends <- data.frame(date = seq(floor_date(min(processed_data$start),unit = "d
 
 # tasks by developer
 ggplot(data = processed_data) +
-  geom_segment(aes(y = short_sum, 
-                   yend = short_sum, 
-                   x = start, xend = end, 
+  geom_segment(aes(y = short_sum, yend = short_sum, 
+                   x = start, 
+                   xend = end, 
                    color = Project),size=3) +
   geom_vline(data = today_df, aes(xintercept = val, linetype = current_day), color = "blue") +
   scale_linetype_manual(values = 'dashed') +
@@ -54,8 +54,7 @@ ggplot(data = processed_data) +
 
 # tasks by Projects
 ggplot(data = processed_data) +
-  geom_segment(aes(y = short_sum, 
-                   yend = short_sum, 
+  geom_segment(aes(y = short_sum, yend = short_sum, 
                    x = start, xend = end, 
                    color = Assignee),size=3) +
   geom_vline(data = today_df, aes(xintercept = val, linetype = current_day), color = "blue") +
